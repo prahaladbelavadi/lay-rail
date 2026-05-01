@@ -1,0 +1,12 @@
+{
+  "name": "lay-rail-deploy",
+  "version": "1.0.0",
+  "description": "Deploy hello-express to Railway via GitHub API",
+  "type": "module",
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
