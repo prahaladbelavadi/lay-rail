@@ -10,6 +10,15 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Load .env if present (no dotenv dependency — plain fs parse)
+const envPath = path.join(__dirname, '.env');
+if (fs.existsSync(envPath)) {
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const match = line.match(/^\s*([\w]+)\s*=\s*([^#]*)/);
+    if (match) process.env[match[1]] = match[2].trim();
+  }
+}
+
 // ── Config ────────────────────────────────────────────────────
 const config = {
   githubUser:          process.env.GITHUB_USER          || '',

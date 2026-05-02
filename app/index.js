@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello World from Railway!',
+    message: 'Hello World update from Railway!',
     environment: process.env.RAILWAY_ENVIRONMENT || 'local',
     timestamp: new Date().toISOString()
   });
